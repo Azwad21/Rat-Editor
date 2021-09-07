@@ -2,12 +2,24 @@
   "name": "rat-editor",
   "version": "0.1.0",
   "private": true,
+  "main": "electron.js",
+  "homepage": "/",
   "dependencies": {
+    "@fontsource/roboto": "^4.5.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/system": "^4.12.1",
+    "@popperjs/core": "^2.9.3",
+    "@szhsin/react-menu": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@tippyjs/react": "^4.2.5",
+    "electron": "^14.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-popper": "^2.2.5",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
@@ -15,7 +27,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass src/sass/style.scss:src/css/style.css --watch",
+    "electron:start": "electron .",
+    "electron:dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
   },
   "eslintConfig": {
     "extends": [

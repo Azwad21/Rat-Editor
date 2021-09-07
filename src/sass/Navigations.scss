@@ -1,0 +1,112 @@
+div.rat-editor-appbar-navigations {
+    display: flex;
+    align-items: stretch;
+
+    div.test {
+        span.label {
+            margin-right: 7.5rem;
+        }
+
+        span.key {
+            font-weight: bold;
+        }
+    }
+
+    ul.rat-editor-appbar-navigation-menu {
+        background-color: var(--rat-editor-appbar-navigation-menu-bg-color);
+        color: var(--rat-editor-appbar-navigation-menu-fg-color);
+        font-size: 12.5px;
+        // font-weight: 200;
+        letter-spacing: .2px;
+
+        li.szh-menu__item {
+            background-color: var(
+                --rat-editor-appbar-navigation-menu-item-bg-color
+            );
+            color: var(--rat-editor-appbar-navigation-menu-item-fg-color);
+            padding-left: 35px;
+            padding-right: 35px;
+
+            /* &.szh-menu__item--open {
+                background-color: var(
+                    --rat-editor-appbar-navigation-menu-submenu-open-bg-color
+                );
+                color: var(
+                    --rat-editor-appbar-navigation-menu-submenu-open-fg-color
+                );
+            } */
+
+            &:hover {
+                background-color: var(
+                    --rat-editor-appbar-navigation-menu-item-hover-bg-color
+                );
+                color: var(
+                    --rat-editor-appbar-navigation-menu-item-hover-fg-color
+                );
+            }
+
+            &:active {
+                background-color: var(
+                    --rat-editor-appbar-navigation-menu-item-active-bg-color
+                );
+                color: var(
+                    --rat-editor-appbar-navigation-menu-item-active-fg-color
+                );
+            }
+        }
+
+        li.szh-menu__submenu {
+            div[role="menuitem"] {
+                padding-left: 35px;
+                padding-right: 35px;
+
+                &.szh-menu__item--open {
+                    background-color: var(
+                        --rat-editor-appbar-navigation-menu-submenu-open-bg-color
+                    );
+                    color: var(
+                        --rat-editor-appbar-navigation-menu-submenu-open-fg-color
+                    );
+                }
+
+                &:hover:not(.szh-menu__item--open) {
+                    background-color: var(
+                        --rat-editor-appbar-navigation-menu-item-hover-bg-color
+                    );
+                    color: var(
+                        --rat-editor-appbar-navigation-menu-item-hover-fg-color
+                    );
+                }
+
+                &::after {
+                    content: var(
+                        --rat-editor-appbar-navigation-menu-submenu-caret
+                    );
+                    font-size: 28px;
+                    color: currentColor;
+                }
+            }
+        }
+
+        li.szh-menu__divider {
+            background-color: var(--rat-editor-appbar-navigation-menu-divider-color);
+        }
+    }
+
+    button.rat-editor-appbar-navigation-button {
+        height: 100%;
+        border: none;
+        border-radius: 0;
+        padding: 0.5rem 1rem;
+        font-weight: 900;
+        background-color: var(--rat-editor-appbar-navigation-button-bg-color);
+        color: var(--rat-editor-appbar-navigation-button-fg-color);
+
+        &:hover {
+            background-color: var(
+                --rat-editor-appbar-navigation-button-hover-bg-color
+            );
+            color: var(--rat-editor-appbar-navigation-button-hover-fg-color);
+        }
+    }
+}

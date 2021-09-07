@@ -1,0 +1,104 @@
+@use "sass:color" as color;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    /* overflow: hidden; */
+}
+
+div#root {
+    height: 100vh;
+}
+
+*.rat-editor-draggable-region {
+    -webkit-app-region: drag;
+}
+
+*.no-select-region {
+    user-select: none;
+}
+
+div.tippyTooltip {
+    font-family: var(--rat-editor-global-font-family);
+    background-color: var(--rat-editor-tooltip-bg-color);
+    color: var(--rat-editor-tooltip-fg-color);
+    padding: .5rem .8rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.43);
+}
+
+// document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
+
+:root {
+    /* GLOBAL VARIABLES */
+    --rat-editor-bg-color: #1d1d1d;
+    --rat-editor-fg-color: #fff;
+    --rat-editor-accent-color: #2196f3;
+    --rat-editor-global-font-family: "Roboto", sans-serif;
+
+    --rat-editor-tooltip-bg-color: #000;
+    --rat-editor-tooltip-fg-color: #fff;
+
+    /* APPBAR VARIABLES */
+    --rat-editor-appbar-bg-color: var(--rat-editor-bg-color);
+    --rat-editor-appbar-fg-color: var(--rat-editor-fg-color);
+    --rat-editor-appbar-font-family: var(--rat-editor-global-font-family);
+
+    /* APPBAR NAVIGATION VARIABLES */
+    --rat-editor-appbar-navigation-button-bg-color: transparent;
+    --rat-editor-appbar-navigation-button-hover-bg-color: rgba(255,255,255,0.05);
+    --rat-editor-appbar-navigation-button-fg-color: var(--rat-editor-fg-color);
+    --rat-editor-appbar-navigation-button-hover-fg-color: var(--rat-editor-fg-color);
+
+    --rat-editor-appbar-navigation-menu-submenu-caret: "\203A";
+    --rat-editor-appbar-navigation-menu-bg-color: var(--rat-editor-appbar-bg-color);
+    --rat-editor-appbar-navigation-menu-fg-color: var(--rat-editor-appbar-fg-color);
+    --rat-editor-appbar-navigation-menu-item-bg-color: transparent;
+    // --rat-editor-appbar-navigation-menu-item-hover-bg-color: rgba(255,255,255,0.05);
+    --rat-editor-appbar-navigation-menu-item-hover-bg-color: var(--rat-editor-accent-color);
+    --rat-editor-appbar-navigation-menu-item-active-bg-color: var(--rat-editor-accent-color);
+    --rat-editor-appbar-navigation-menu-item-fg-color: var(--rat-editor-appbar-navigation-menu-fg-color);
+    --rat-editor-appbar-navigation-menu-item-hover-fg-color: var(--rat-editor-appbar-navigation-menu-item-fg-color);
+    --rat-editor-appbar-navigation-menu-item-active-fg-color: #fff;
+
+    --rat-editor-appbar-navigation-menu-submenu-open-bg-color: var(--rat-editor-appbar-navigation-menu-item-active-bg-color); 
+    --rat-editor-appbar-navigation-menu-submenu-open-fg-color: var(--rat-editor-appbar-navigation-menu-item-active-fg-color);
+
+    --rat-editor-appbar-navigation-menu-divider-color: #2d2d2d;
+
+    /* APPBAR WINDOW CONTROL VARIABLES */
+    --rat-editor-appbar-window-control-bg-color: tranparent;
+
+    --rat-editor-appbar-window-control-closebutton-bg-color: transparent;
+    --rat-editor-appbar-window-control-closebutton-fg-color: inherit;
+    --rat-editor-appbar-window-control-closebutton-hover-bg-color: #f44336;
+    --rat-editor-appbar-window-control-closebutton-hover-fg-color: inherit;
+    
+    --rat-editor-appbar-window-control-maximizebutton-bg-color: transparent;
+    --rat-editor-appbar-window-control-maximizebutton-fg-color: inherit;
+    --rat-editor-appbar-window-control-maximizebutton-hover-bg-color: rgba(255, 255, 255, 0.05);
+    --rat-editor-appbar-window-control-maximizebutton-hover-fg-color: inherit;
+    
+    --rat-editor-appbar-window-control-minimizebutton-bg-color: transparent;
+    --rat-editor-appbar-window-control-minimizebutton-fg-color: inherit;
+    --rat-editor-appbar-window-control-minimizebutton-hover-bg-color: rgba(255, 255, 255, 0.05);
+    --rat-editor-appbar-window-control-minimizebutton-hover-fg-color: inherit;
+
+    /* SIDEBAR VARIABLES */
+    --rat-editor-sidebar-bg-color: #2d2d2d;
+    --rat-editor-sidebar-fg-color: var(--rat-editor-fg-color);
+    --rat-editor-sidebar-font-family: var(--rat-editor-global-font-family);
+
+    --rat-editor-sidebar-button-bg-color: tranparent;
+    --rat-editor-sidebar-button-fg-color: #fff;
+    --rat-editor-sidebar-button-hover-bg-color: rgba(255,255,255,0.05);
+    --rat-editor-sidebar-button-hover-fg-color: var(--rat-editor-accent-color);
+}

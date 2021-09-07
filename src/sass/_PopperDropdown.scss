@@ -1,0 +1,10 @@
+div.rat-editor-popper-dropdown {
+    background-color: var(--rat-editor-popper-dropdown-bg-color);
+    color: var(--rat-editor-popper-dropdown-fg-color);
+    font-family: var(--rat-editor-font-family);
+}
+
+div.rat-editor-popper-dropdown-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}

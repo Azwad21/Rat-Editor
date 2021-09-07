@@ -1,0 +1,28 @@
+div.rat-editor-sidebar {
+    background-color: var(--rat-editor-sidebar-bg-color);
+    color: var(--rat-editor-sidebar-fg-color);
+    font-family: var(--rat-editor-sidebar-font-family);
+    
+    button.rat-editor-sidebar-button {
+        font-family: inherit;
+        font-size: 20px;
+        padding: 0.8rem .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 0;
+        background: var(--rat-editor-sidebar-button-bg-color);
+        color: var(--rat-editor-sidebar-button-fg-color);
+        
+        &:hover {
+            background: var(--rat-editor-sidebar-button-hover-bg-color);
+            color: var(--rat-editor-sidebar-button-hover-fg-color);
+        }
+
+        /* &.rat-editor-sidebar-button-project-explorer {
+            // font-size: 25px;
+            // color: var(--rat-editor-accent-color)
+        } */
+    }
+}
