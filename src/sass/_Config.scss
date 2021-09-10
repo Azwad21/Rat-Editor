@@ -92,13 +92,17 @@ div.tippyTooltip {
     --rat-editor-appbar-window-control-minimizebutton-hover-bg-color: rgba(255, 255, 255, 0.05);
     --rat-editor-appbar-window-control-minimizebutton-hover-fg-color: inherit;
 
-    /* SIDEBAR VARIABLES */
-    --rat-editor-sidebar-bg-color: #2d2d2d;
-    --rat-editor-sidebar-fg-color: var(--rat-editor-fg-color);
-    --rat-editor-sidebar-font-family: var(--rat-editor-global-font-family);
+    /* SIDEBAR TABS VARIABLES */
+    --rat-editor-sidebar-tabs-bg-color: #2d2d2d;
+    --rat-editor-sidebar-tabs-fg-color: var(--rat-editor-fg-color);
+    --rat-editor-sidebar-tabs-font-family: var(--rat-editor-global-font-family);
 
-    --rat-editor-sidebar-button-bg-color: tranparent;
-    --rat-editor-sidebar-button-fg-color: #fff;
-    --rat-editor-sidebar-button-hover-bg-color: rgba(255,255,255,0.05);
-    --rat-editor-sidebar-button-hover-fg-color: var(--rat-editor-accent-color);
+    --rat-editor-sidebar-tabs-button-bg-color: tranparent;
+    --rat-editor-sidebar-tabs-button-fg-color: #fff;
+    --rat-editor-sidebar-tabs-button-hover-bg-color: rgba(255,255,255,0.05);
+    --rat-editor-sidebar-tabs-button-hover-fg-color: var(--rat-editor-accent-color);
+
+    /* EXPLORER VARIABLES */
+    --rat-editor-explorer-bg-color: #252323;
+    --rat-editor-explorer-header-fg-color: #fff;
 }

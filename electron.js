@@ -1,15 +1,20 @@
-const { app, BrowserWindow , ipcMain} = require('electron')
+const { app, BrowserWindow , ipcMain, screen} = require('electron')
 const path = require('path');
 const url = require("url");
+const directoryTree = require("directory-tree");
 
 ipcMain.on("message", (evetn, data) => {
-    console.log(data)
+    console.log(data);
 })
 
+var mainWindow;
 function createWindow() {
-    const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+    const {width, height} = screen.getPrimaryDisplay().workAreaSize;
+    let dWidth = parseInt((80 / 100) * width); 
+    let dHeight = parseInt((90 / 100) * height); 
+    mainWindow = new BrowserWindow({
+        width: dWidth,
+        height: dHeight,
         frame: false,
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
@@ -18,6 +23,7 @@ function createWindow() {
             enableRemoteModule: false
         }
     })
+    
 
     const startUrl = process.env.ELECTRON_START_URL || url.format({
         pathname: path.join(__dirname, 'build/index.html'),
@@ -27,9 +33,27 @@ function createWindow() {
 
     mainWindow.loadURL(startUrl);
 
+    const pathData = directoryTree(process.cwd(), {
+        exclude: [/node_modules/, /.git/]
+    })
+
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.webContents.send("path:data", pathData)
+    })
+
+    //Test section (to be removed)
+
+    ipcMain.on("test:path:data:request", () => mainWindow.webContents.send("path:data", pathData));
+
+    // ####################
+
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 }
+
+
+
+
 app.whenReady().then(() => {
     createWindow()
 

@@ -1,28 +1,71 @@
-div.rat-editor-sidebar {
-    background-color: var(--rat-editor-sidebar-bg-color);
-    color: var(--rat-editor-sidebar-fg-color);
-    font-family: var(--rat-editor-sidebar-font-family);
-    
-    button.rat-editor-sidebar-button {
-        font-family: inherit;
-        font-size: 20px;
-        padding: 0.8rem .8rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        border-radius: 0;
-        background: var(--rat-editor-sidebar-button-bg-color);
-        color: var(--rat-editor-sidebar-button-fg-color);
-        
-        &:hover {
-            background: var(--rat-editor-sidebar-button-hover-bg-color);
-            color: var(--rat-editor-sidebar-button-hover-fg-color);
-        }
+div.rat-editor-sidebar-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    div.rat-editor-sidebar-tabs {
+        background-color: var(--rat-editor-sidebar-tabs-bg-color);
+        color: var(--rat-editor-sidebar-tabs-fg-color);
+        font-family: var(--rat-editor-sidebar-tabs-font-family);
 
-        /* &.rat-editor-sidebar-button-project-explorer {
+        button.rat-editor-sidebar-button {
+            font-family: inherit;
+            font-size: 20px;
+            padding: 0.8rem 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 0;
+            background: var(--rat-editor-sidebar-tabs-button-bg-color);
+            color: var(--rat-editor-sidebar-tabs-button-fg-color);
+
+            &:hover:not(.rat-editor-sidebar-button-active) {
+                background: var(--rat-editor-sidebar-tabs-button-hover-bg-color);
+                color: var(--rat-editor-sidebar-tabs-button-hover-fg-color);
+            }
+
+            /* &.rat-editor-sidebar-button-project-explorer {
             // font-size: 25px;
             // color: var(--rat-editor-accent-color)
         } */
+
+            &.rat-editor-sidebar-button-active {
+                background: var(--rat-editor-accent-color);
+            }
+        }
+    }
+
+    div.rat-editor-sidebar-pane {
+        // background-color: lightgreen;
+        width: 250px;
+        position: relative;
+        // overflow: hidden;
+
+        div.rat-editor-sidebar-pane-contents {
+            width: 100%;
+            height: 100%;
+            &.rat-editor-sidebar-pane-contents-closed {
+                pointer-events: none;
+                visibility: hidden;
+            }
+        }
+
+        div.rat-editor-sidebar-pane-resizer {
+            position: absolute;
+            width: 4px;
+            right: 0;
+            top: 0;
+            transform: translateX(50%);
+            // height: 100px;
+            bottom: 0;
+            background-color: dodgerblue;
+            z-index: 5;
+            opacity: 0;
+            // pointer-events: none;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }

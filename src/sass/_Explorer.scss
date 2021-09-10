@@ -1,0 +1,18 @@
+div.rat-editor-explorer {
+    width: 100%;
+    height: 100%;
+    // border: 1px solid red;
+    background-color: var(--rat-editor-explorer-bg-color);
+
+    div.rat-editor-explorer-header {
+        // background-color: red;
+        padding: .2rem .8rem;
+        color: var(--rat-editor-explorer-header-fg-color);
+        h4 {
+            font-family: var(--rat-editor-global-font-family);
+            // font-size: 16px;
+            font-weight: 300;
+
+        }
+    }
+}

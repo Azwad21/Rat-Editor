@@ -77,14 +77,17 @@ div.tippyTooltip {
   --rat-editor-appbar-window-control-minimizebutton-fg-color: inherit;
   --rat-editor-appbar-window-control-minimizebutton-hover-bg-color: rgba(255, 255, 255, 0.05);
   --rat-editor-appbar-window-control-minimizebutton-hover-fg-color: inherit;
-  /* SIDEBAR VARIABLES */
-  --rat-editor-sidebar-bg-color: #2d2d2d;
-  --rat-editor-sidebar-fg-color: var(--rat-editor-fg-color);
-  --rat-editor-sidebar-font-family: var(--rat-editor-global-font-family);
-  --rat-editor-sidebar-button-bg-color: tranparent;
-  --rat-editor-sidebar-button-fg-color: #fff;
-  --rat-editor-sidebar-button-hover-bg-color: rgba(255,255,255,0.05);
-  --rat-editor-sidebar-button-hover-fg-color: var(--rat-editor-accent-color);
+  /* SIDEBAR TABS VARIABLES */
+  --rat-editor-sidebar-tabs-bg-color: #2d2d2d;
+  --rat-editor-sidebar-tabs-fg-color: var(--rat-editor-fg-color);
+  --rat-editor-sidebar-tabs-font-family: var(--rat-editor-global-font-family);
+  --rat-editor-sidebar-tabs-button-bg-color: tranparent;
+  --rat-editor-sidebar-tabs-button-fg-color: #fff;
+  --rat-editor-sidebar-tabs-button-hover-bg-color: rgba(255,255,255,0.05);
+  --rat-editor-sidebar-tabs-button-hover-fg-color: var(--rat-editor-accent-color);
+  /* EXPLORER VARIABLES */
+  --rat-editor-explorer-bg-color: #252323;
+  --rat-editor-explorer-header-fg-color: #fff;
 }
 
 div.rat-grid {
@@ -96,7 +99,7 @@ div.rat-grid {
 
 div.rat-editor-main {
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: auto 1fr;
 }
 
 header {
@@ -228,12 +231,17 @@ div.rat-editor-appbar-navigations button.rat-editor-appbar-navigation-button:hov
   color: var(--rat-editor-appbar-navigation-button-hover-fg-color);
 }
 
-div.rat-editor-sidebar {
-  background-color: var(--rat-editor-sidebar-bg-color);
-  color: var(--rat-editor-sidebar-fg-color);
-  font-family: var(--rat-editor-sidebar-font-family);
+div.rat-editor-sidebar-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr;
 }
-div.rat-editor-sidebar button.rat-editor-sidebar-button {
+div.rat-editor-sidebar-container div.rat-editor-sidebar-tabs {
+  background-color: var(--rat-editor-sidebar-tabs-bg-color);
+  color: var(--rat-editor-sidebar-tabs-fg-color);
+  font-family: var(--rat-editor-sidebar-tabs-font-family);
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-tabs button.rat-editor-sidebar-button {
   font-family: inherit;
   font-size: 20px;
   padding: 0.8rem 0.8rem;
@@ -242,16 +250,63 @@ div.rat-editor-sidebar button.rat-editor-sidebar-button {
   align-items: center;
   border: none;
   border-radius: 0;
-  background: var(--rat-editor-sidebar-button-bg-color);
-  color: var(--rat-editor-sidebar-button-fg-color);
+  background: var(--rat-editor-sidebar-tabs-button-bg-color);
+  color: var(--rat-editor-sidebar-tabs-button-fg-color);
   /* &.rat-editor-sidebar-button-project-explorer {
       // font-size: 25px;
       // color: var(--rat-editor-accent-color)
   } */
 }
-div.rat-editor-sidebar button.rat-editor-sidebar-button:hover {
-  background: var(--rat-editor-sidebar-button-hover-bg-color);
-  color: var(--rat-editor-sidebar-button-hover-fg-color);
+div.rat-editor-sidebar-container div.rat-editor-sidebar-tabs button.rat-editor-sidebar-button:hover:not(.rat-editor-sidebar-button-active) {
+  background: var(--rat-editor-sidebar-tabs-button-hover-bg-color);
+  color: var(--rat-editor-sidebar-tabs-button-hover-fg-color);
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-tabs button.rat-editor-sidebar-button.rat-editor-sidebar-button-active {
+  background: var(--rat-editor-accent-color);
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-pane {
+  width: 250px;
+  position: relative;
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-pane div.rat-editor-sidebar-pane-contents {
+  width: 100%;
+  height: 100%;
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-pane div.rat-editor-sidebar-pane-contents.rat-editor-sidebar-pane-contents-closed {
+  pointer-events: none;
+  visibility: hidden;
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-pane div.rat-editor-sidebar-pane-resizer {
+  position: absolute;
+  width: 4px;
+  right: 0;
+  top: 0;
+  transform: translateX(50%);
+  bottom: 0;
+  background-color: dodgerblue;
+  z-index: 5;
+  opacity: 0;
+}
+div.rat-editor-sidebar-container div.rat-editor-sidebar-pane div.rat-editor-sidebar-pane-resizer:hover {
+  opacity: 1;
+}
+
+div.rat-editor-sidebar-pane-contents {
+  height: 100%;
+}
+
+div.rat-editor-explorer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--rat-editor-explorer-bg-color);
+}
+div.rat-editor-explorer div.rat-editor-explorer-header {
+  padding: 0.2rem 0.8rem;
+  color: var(--rat-editor-explorer-header-fg-color);
+}
+div.rat-editor-explorer div.rat-editor-explorer-header h4 {
+  font-family: var(--rat-editor-global-font-family);
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=style.css.map */
